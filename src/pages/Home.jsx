@@ -1,13 +1,17 @@
-import PropTypes from "prop-types";
+import UserList from "../components/users/UserList";
 
-const Home = (props) => {
+const Home = () => {
+  // const gitUrl = import.meta.env.VITE_GIT_URL;
+  // const token = import.meta.env.VITE_APP_TOKEN;
+
   return (
-    <div>
-      <h1 className="text-6xl">This is HOME</h1>
-    </div>
+    <>
+      {/* Search component to go here */}
+
+      {/* Displays a list of searched users */}
+      <UserList />
+    </>
   );
 };
-
-Home.propTypes = {};
 
 export default Home;

@@ -19,7 +19,12 @@ const About = () => {
       </p>
       <p className="text-lg text-gray-400">
         Project By:
-        <a className="text-white" href="https://twitter.com/hassibmoddasser">
+        <a
+          className="text-white"
+          href="https://twitter.com/mikenjuki"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {" "}
           Michael Njuki
         </a>
@@ -29,3 +34,7 @@ const About = () => {
 };
 
 export default About;
+
+
+// token: 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
+//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

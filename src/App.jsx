@@ -28,3 +28,5 @@ const App = () => {
 };
 
 export default App;
+
+// const token = import.meta.env.VITE_APP_TOKEN
