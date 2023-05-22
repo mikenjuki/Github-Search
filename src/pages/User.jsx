@@ -11,19 +11,23 @@ import {
 import Spinner from "../components/layout/Spinner";
 import { GithubContext } from "../context/github/GithubContext";
 import RepoList from "../components/users/RepoList";
+import { getUsersAndRepos } from "../context/github/GitHubAction";
 
 const User = () => {
-  const { getUser, user, loading, getUserRepos, repos } =
-    useContext(GithubContext);
+  const { user, loading, repos, dispatch } = useContext(GithubContext);
 
   const { login } = useParams();
 
   useEffect(() => {
-    getUser(login);
-    getUserRepos(login);
+    dispatch({ type: "SET_LOADING" });
 
-    //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const getUserData = async () => {
+      const userData = await getUsersAndRepos(login);
+      dispatch({ type: "GET_USERS_AND_REPOS", payload: userData });
+    };
+
+    getUserData();
+  }, [dispatch, login]);
 
   const {
     name,
